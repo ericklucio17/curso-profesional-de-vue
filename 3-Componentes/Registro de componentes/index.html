@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trabajo con listas</title>
+  </head>
+  <body>
+    <div id="app">
+      <new-component></new-component>
+    </div>
+
+    <div id="app2">
+      <new-component></new-component>
+    </div>
+
+    <script src="vue.js"></script>
+    <script>
+      var newComponent = {
+        template: "<button @click='clickCounter'> Clicks {{ counter }} </button>",
+        data: function () {
+          return {
+            counter: 0,
+          };
+        },
+        methods: {
+          clickCounter: function () {
+            this.counter++;
+          },
+        },
+      };
+
+      var vm = new Vue({
+        el: "#app",
+        data: {
+          items: {
+            input: "Hola",
+          },
+        },
+        components: {
+          "new-component": newComponent,
+        },
+      });
+    </script>
+    <script>
+      var vm2 = new Vue({
+        el: "#app2",
+        data: {
+          items: {
+            input: "Hola",
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

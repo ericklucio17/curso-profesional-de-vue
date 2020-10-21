@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Directivas</title>
+  </head>
+  <body>
+    <div id="app">
+      <template v-if="errors.length">
+        <ul>
+          <li v-for="error in errors" v-text="error"></li>
+        </ul>
+      </template>
+      <form @submit.prevent="formSubmit">
+        <input type="text" v-model="input" />
+        <select name="" id="" v-model="select">
+          <option value="A">A</option>
+          <option value="B">B</option>
+          <option value="C">C</option>
+        </select>
+        <textarea name="" id="" cols="30" rows="10" v-model="textarea"></textarea>
+        <button type="submit">Enviar</button>
+      </form>
+    </div>
+
+    <script src="vue.js"></script>
+    <script>
+      var vm = new Vue({
+        el: "#app",
+        data: {
+          errors: [],
+          input: "",
+          select: "",
+          textarea: "",
+        },
+        methods: {
+          formSubmit: function () {
+            if (!this.input) this.errors.push("El campo input es requerido");
+            if (!this.input) this.errors.push("El campo select es requerido");
+            if (!this.input) this.errors.push("El campo textarea es requerido");
+            console.log(this.input);
+            console.log(this.select);
+            console.log(this.textarea);
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

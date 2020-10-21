@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Condicionales</title>
+  </head>
+  <body>
+    <div id="app">
+      <template v-if="flag">
+        <p>Texto</p>
+        <p>Texto</p>
+        <p>Texto</p>
+        <p>Texto</p>
+      </template>
+      <div v-if="flag">
+        <p>Texto</p>
+        <p>Texto</p>
+        <p>Texto</p>
+        <p>Texto</p>
+      </div>
+      <p v-if="flag">Hola</p>
+      <p v-else-if="flag"></p>
+
+      <p v-else>False</p>
+    </div>
+
+    <script src="vue.js"></script>
+    <script>
+      var vm = new Vue({
+        el: "#app",
+        data: {
+          flag: true,
+        },
+      });
+    </script>
+  </body>
+</html>

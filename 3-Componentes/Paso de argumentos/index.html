@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pasos de argumentos</title>
+  </head>
+  <body>
+    <div id="app">
+      <new-component :autor="autor"></new-component>
+    </div>
+
+    <script src="vue.js"></script>
+    <script>
+      Vue.component("new-component", {
+        template: "<h1>{{ autor.name }} </h1>",
+        props: {
+          title: String,
+          comments: {
+            autor: Object,
+          },
+        },
+      });
+
+      var vm = new Vue({
+        el: "#app",
+        data: {
+          autor: {
+            name: "Name",
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

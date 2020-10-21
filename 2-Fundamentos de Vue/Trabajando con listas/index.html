@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trabajo con listas</title>
+  </head>
+  <body>
+    <div id="app">
+      <ul>
+        <!-- <li v-for="item in items" :key="index">
+          {{ item }}
+        </li> -->
+        <li v-for="(item, index) in items" :key="index">
+          {{ index }}
+        </li>
+      </ul>
+    </div>
+
+    <script src="vue.js"></script>
+    <script>
+      var vm = new Vue({
+        el: "#app",
+        data: {
+          items: {
+            name: "codi",
+            age: 7,
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

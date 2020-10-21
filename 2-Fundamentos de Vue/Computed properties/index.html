@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>computed properties</title>
+  </head>
+  <body>
+    <div id="app">
+      <p>{{ mGetRandom() }}</p>
+      <p>{{ mGetRandom() }}</p>
+      <p>{{ mGetRandom() }}</p>
+      <hr />
+      <p>{{ cGetRandom() }}</p>
+      <p>{{ cGetRandom() }}</p>
+      <p>{{ cGetRandom() }}</p>
+    </div>
+
+    <script src="vue.js"></script>
+    <script>
+      var vm = new Vue({
+        el: "#app",
+        data: {
+          errors: [],
+          input: "",
+          select: "",
+          textarea: "",
+        },
+        methods: {
+          mGetRandom: function () {
+            return Math.random();
+          },
+        },
+        computed: {
+          cGetRandom: function () {
+            return Math.random();
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
